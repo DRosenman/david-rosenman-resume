@@ -1,43 +1,0 @@
-
-var ftGUID_10139812="659219234FE03C";
-var ftConfID_10139812="0";
-var ftParams_10139812="ftOBA=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fpagead%2Fads%3Fclient%3Dca-pub-6149057907449803%26output%3Dhtml%26h%3D280%26slotname%3D1192261709%26adk%3D1044347322%26adf%3D3822581813%26pi%3Dt.ma~as.1192261709%26w%3D300%26lmt%3D1723204425%26format%3D300x280%26url%3Dhttps%253A%252F%252Fwww.r-bloggers.com%252F2024%252F05%252Fbase-r-equivalents-of-dplyr-functions-part-1-coalesce%252F%26aieuf%3D1%26aicrs%3D1%26uach%3DWyJXaW5kb3dzIiwiMTkuMC4wIiwieDg2IiwiIiwiMTQzLjAuNzQ5OS4xOTMiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjE0My4wLjc0OTkuMTkzIl0sWyJDaHJvbWl1bSIsIjE0My4wLjc0OTkuMTkzIl0sWyJOb3QgQShCcmFuZCIsIjI0LjAuMC4wIl1dLDBd%26abgtt%3D9%26dt%3D1768706054430%26bpp%3D4%26bdt%3D476%26idt%3D275%26shv%3Dr20260115%26mjsv%3Dm202601130101%26ptt%3D9%26saldr%3Daa%26abxe%3D1%26cookie_enabled%3D1%26eoidce%3D1%26correlator%3D8018930049879%26frm%3D20%26pv%3D2%26u_tz%3D-300%26u_his%3D9%26u_h%3D1200%26u_w%3D1920%26u_ah%3D1152%26u_aw%3D1920%26u_cd%3D24%26u_sd%3D2%26dmc%3D8%26adx%3D1123%26ady%3D897%26biw%3D190&us_privacy=${US_PRIVACY}&ftClick=https://googleads.g.doubleclick.net/dbm/clk%3Fsa%3DL%26ai%3DCne7cBlBsadaMC7-d2NoPj-SQuQGY85yBgwHDrOWXrBWvgbrj1wIQASDp_YMGYMmekYzQpOQPoAGC5OvQKcgBCagDAcgDmwSqBIsCT9Cpif1qswOd7w-xEDv8jVStcX8va70AefDYFsGSMzogwYPtsIgw6gMXeSWJkHPXkH9MC1UodhB5sD5xP55MnBMblcU8SfbS5VdgICCGoue5EY2JrycgEmJ-M50DNm9TCq2EATYWCHGCXOtmVmGvbOQo2NfCQotMCNwe9-z9Mk8igu-kShd7f9IHn4gXQJOwG9lHeW9BV8mztOtkoa0YdFJ60QzJiW7VdNIrJ1N-MoklPGiCIeilsl2UcSxP4jhzHF_zzYFm6jSwElNwRw9wWdhkw6DOpzXjxvtb98tz1Bxzo0vsvUT7clKWu0TnEkLbbM7X8GN1PL9-9g5L6PNHA7sQmRqYd8js1fJ0wASyvaqMnATgBAOIBZb2xa9LkAYBoAZNgAeCnLywBKgHp8yxAqgHpr4bqAfMzrECqAfz0RuoB5bYG6gHqpuxAqgHjs4bqAeT2BuoB_DgG6gH7paxAqgH_p6xAqgHr76xAqgH1ckbqAfZtrECqAeaBqgH_56xAqgH35-xAqgH-MKxAqgH-8KxAqgH59exAtgHANIILwiAYRABGJ8DMgiKgoCAgICACDoNgECAwICAgICogAKoA0i9_cE6WOWZyMCPlJIDgAoBmAsByAsBgAwBqg0CVVPqDRMIsKnJwI-UkgMVvw5WBR0PMiQX8A0BiA4JsBPflsof2BMN2BQB0BUByhYCCgD4FgGAFwGyFw4YAioKMTE5MjI2MTcwOaoYFwkAAAAAXNcgQRIKMTE5MjI2MTcwORgBshgJEgKcahhNIgEA0BkB%26ae%3D1%26num%3D1%26cid%3DCAQSoAEA56J1edRvU3CNnkvuorqr51WonOIqTHntc5XhB93XGm9s4HnSFRj_yolhIpRLgIk-xxE4EVydA2FkPO_Z4dA1RjufmyD6r56y3JWHOOvVxhhQ_2dYogQMajnYBZ4KpDvlPLDHCj6db440XhZAVDFSAoFezJTv5RKL9POvOgNnPBAajFhJB-D6maEhRyjdJ8hjCEsORUV_z5KgYRgQUjK1GAE%26sig%3DAOD64_22VTblkoniJ9BEnFBfVoyl5KHijg%26client%3Dca-pub-6149057907449803%26dbm_c%3DAKAmf-Bfmjr2xCsaju49sKn2cNnmmKGDkh52YeGzFlmbQJA0LmgZzZEBOMsw8wgL7APLaR09iXBnYdRuKV-E3ajP2qXHJS8YX_jQ3DsIMM9gICozOPbxCdCtJQ59IpP0F_lBukIbcQuP7OTPx7Tf5O0q4WIa-JAKz_4F_schymL7pefiOOwFT1UHT-H5Q_NuTBmpeQBLoVPGjSZwKpoxgBISkC0kQ5zwnvDdXXJ-RJt3awQIyYEpFy6OY9MNIrsITtogNpHl7WI-xsUHbQSaimKRvAx9AFii6Q%26cry%3D1%26dbm_d%3DAKAmf-DhS48RWZo5_4kM2qFy7_tvrjL5cj9uioasNzDQrWDr_-0l-FrDqvzr2HRbzSdCtBopj6LBofj3Pt-1IRMGM1IXqwAX8ih4sPe1nixKi1Lrlv1TaCp7ogJ1iFUhCJP1DLXWt7ZFGwyk-qqGZGuGLDbcY0uvokehkeJHiruCcRYkttziaRtu9BcoRlImIMV-Zxwz4wbZO3taZpXesIsR7KRYQNZMYrEczUerEwrWKUXActtYv4i_1PdqWWXooQDmjKzVFCUtyIhBYxSfCB-SyEtyvavN9kz7RsXoJLPGtDAHV-c9StCmS8BxhzqoaVlWf-uaWhvM7vYtawwDLkNlNzDjm1qmiJjpQUmmEoNK2tlzxwY7450IWRiZRrDexm1VjvRdTMPdMKe802QuBRyo4TLTkmi3k2x-YY9WNDuQzD6g_R4_OtX4R8eX8WqmPdyC39pG6jhZvGDYKjzUr9-ZbVSYRDr9imtE9JOta_rSEbJiTM8lXoT_4Q8CjGRXNhVI7-JSWVyF8mK1Qqmura9XG2LYaIx3Qvg-ag3aDbygxW8kvgwiaBf_F_z9N59t1C9wbAYE1jpvkvUPKbPtiRgWNOP63RwhMXPucLgi5IReVMqf27xglyWdOcnj-OunH_bmtR02z6Ax5WCwVWgvVsP3vRtXkdEHqdmqEA4UTjeks5Lx3uhE8klUpNBDDx1NN5actMTZzZuMD4_SZG9TvtmMycFlTy4f6d7CBPMJkMZ4v7VMkBqY93JaECp0zKqZEWaKr-JR1mW7bDspbPsq4Ufwd5tSZRY0jA%26adurl%3D&pub_id=1&site_url=https://www.r-bloggers.com/2024/05/base-r-equivalents-of-dplyr-functions-part-1-coalesce/&sup_platform=1&cachebuster=310374.439927444";
-var ftKeyword_10139812="";
-var ftCustom_10139812="";
-var ftSection_10139812="";
-var ftSegment_10139812="";
-var ftSegmentList_10139812=[];
-var ftRuleMatch_10139812="0";
-var ftTimestamp_10139812="1768706160";
-var ftGeoC2_10139812="us";
-var ftGeoState_10139812="pa";
-var ftGeoCity_10139812="langhorne";
-var ftISP_10139812="comcast cable communications inc.";
-var ftSpeed_10139812="cable";
-var ftConnType_10139812="wifi";
-var ftDMA_10139812="504";
-var ftLong_10139812="-74.91";
-var ftLat_10139812="40.18";
-var ftPostal_10139812="19047";
-var ftTimeZone_10139812="-500";
-var ftMobileCarrier_10139812="";
-var ftImp10139812 = {};
-ftImp10139812.privacy = "x";
-ftImp10139812.guidAge = "0";
-ftImp10139812.impID = "1021EC0D-974A-02D0-0264-2F61E8A68378";
-ftImp10139812.duid = "FT:659219234FE03C";
-
-ftImp10139812.ft_tpplid = "";
-ftImp10139812.ft_c = {};
-ftImp10139812.gdpr = "";
-ftImp10139812.gdpr_consent = "";
-ftImp10139812.gdpr_pd = "";
-ftImp10139812.oob_consent = "";
-ftImp10139812.gdprStoredConsent = "";
-ftImp10139812.us_privacy = "!!US_PRIVACY!";
-ftImp10139812.gpc = "0";
-
-ftImp10139812.jsAppend = "1";
-var ftCreativeId_10139812 = "5712174";
-(function(){var tag=document.getElementById("ft_servedby_10139812")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m10139812";js.setAttribute("name","ftscript_m10139812");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("10139812");
-
